@@ -1,4 +1,3 @@
-﻿
-LeetCode/.idea/
-LeetCode/bin/
-LeetCode/obj/
+﻿*/.idea/
+*/bin/
+*/obj/
