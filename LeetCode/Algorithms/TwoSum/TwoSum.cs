@@ -17,6 +17,24 @@ public class Solution
 
         return [];
     }
+
+    public int[] TwoSum2(int[] nums, int target)
+    {
+        var dict = new Dictionary<int, int>();
+
+        for (var i = 0; i < nums.Length; i++)
+        {
+            var complement = target - nums[i];
+            if (dict.TryGetValue(complement, out var complementIndex))
+            {
+                return [i, complementIndex];
+            }
+
+            dict[nums[i]] = i;
+        }
+
+        return [];
+    }
 }
 
 public static class TwoSum
@@ -24,7 +42,8 @@ public static class TwoSum
     public static void Solution(int[] nums, int target)
     {
         var solution = new Solution();
-        var result = solution.TwoSum(nums, target);
+        // var result = solution.TwoSum(nums, target);
+        var result = solution.TwoSum2(nums, target);
 
         foreach (var item in result)
         {
