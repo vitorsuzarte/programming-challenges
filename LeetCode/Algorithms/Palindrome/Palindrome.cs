@@ -20,6 +20,24 @@ public class Solution
 
         return true;
     }
+
+    public bool IsPalindrome2(int x)
+    {
+        var reversed = 0;
+        var num = x;
+
+        while (num >= 1)
+        {
+            reversed = reversed * 10 + num % 10;
+            num = num / 10;
+            
+        }
+
+        if (reversed == x)
+            return true;
+
+        return false;
+    }
 }
 
 public static class Palindrome
@@ -27,6 +45,6 @@ public static class Palindrome
     public static void Solution(int x)
     {
         var solution = new Solution();
-        Console.WriteLine(solution.IsPalindrome(x));
+        Console.WriteLine(solution.IsPalindrome2(x));
     }
 }
